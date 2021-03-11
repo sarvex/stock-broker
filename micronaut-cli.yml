@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.sarvex
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [annotation-api, app-name, assertj, consul, data, data-r2dbc, dekorate-jaeger, dekorate-knative, dekorate-kubernetes, dekorate-prometheus, discovery-consul, elasticsearch, gradle, graphql, h2, hamcrest, http-client, java, java-application, jib, junit, knative, kubernetes, logback, management, micrometer, micrometer-prometheus, nats, netty-server, openapi, properties, r2dbc, reactor, readme, security-annotations, security-oauth2, shade, tracing-jaeger]

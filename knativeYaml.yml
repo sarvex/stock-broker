@@ -1,0 +1,27 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: "stock-broker"
+spec:
+  template:
+    spec:
+      containers:
+      - image: "gcr.io/stock-broker/jib-image"
+        name: "stock-broker"
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /health/readiness
+            port: http
+          initialDelaySeconds: 5
+          timeoutSeconds: 3
+        livenessProbe:
+          httpGet:
+            path: /health/liveness
+            port: http
+          initialDelaySeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 10
