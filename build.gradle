@@ -28,31 +28,34 @@ dependencies {
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
     annotationProcessor("io.micronaut.openapi:micronaut-openapi")
     annotationProcessor("io.micronaut.security:micronaut-security-annotations")
+
     implementation("io.dekorate:jaeger-annotations")
     implementation("io.dekorate:knative-annotations")
     implementation("io.dekorate:kubernetes-annotations")
     implementation("io.dekorate:prometheus-annotations")
-    implementation("io.swagger.core.v3:swagger-annotations")
-    implementation("io.micronaut:micronaut-validation")
-    implementation("io.micronaut:micronaut-runtime")
-    implementation("javax.annotation:javax.annotation-api")
-    implementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut:micronaut-management")
     implementation("io.micronaut.discovery:micronaut-discovery-client")
-    implementation("io.micronaut.micrometer:micronaut-micrometer-core")
-    implementation("io.micronaut.micrometer:micronaut-micrometer-registry-prometheus")
-    implementation("io.micronaut:micronaut-tracing")
-    runtimeOnly("io.jaegertracing:jaeger-thrift")
-    implementation("io.micronaut.security:micronaut-security-oauth2")
     implementation("io.micronaut.elasticsearch:micronaut-elasticsearch")
     implementation("io.micronaut.graphql:micronaut-graphql")
-    implementation("io.micronaut.reactor:micronaut-reactor")
+    implementation("io.micronaut.micrometer:micronaut-micrometer-core")
+    implementation("io.micronaut.micrometer:micronaut-micrometer-registry-prometheus")
     implementation("io.micronaut.nats:micronaut-nats")
-    implementation("io.micronaut.r2dbc:micronaut-r2dbc-core")
     implementation("io.micronaut.r2dbc:micronaut-data-r2dbc")
+    implementation("io.micronaut.r2dbc:micronaut-r2dbc-core")
+    implementation("io.micronaut.reactor:micronaut-reactor")
+    implementation("io.micronaut.security:micronaut-security-oauth2")
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-management")
+    implementation("io.micronaut:micronaut-runtime")
+    implementation("io.micronaut:micronaut-tracing")
+    implementation("io.micronaut:micronaut-validation")
+    implementation("io.swagger.core.v3:swagger-annotations")
+    implementation("javax.annotation:javax.annotation-api")
+
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("io.jaegertracing:jaeger-thrift")
     runtimeOnly("io.r2dbc:r2dbc-h2")
+
     testImplementation("org.assertj:assertj-core")
     testImplementation("org.hamcrest:hamcrest")
 }
@@ -61,12 +64,6 @@ dependencies {
 application {
     mainClass.set("com.sarvex.Application")
 }
-java {
-    sourceCompatibility = JavaVersion.toVersion("15")
-    targetCompatibility = JavaVersion.toVersion("15")
-}
-
-
 
 jib {
     to {
